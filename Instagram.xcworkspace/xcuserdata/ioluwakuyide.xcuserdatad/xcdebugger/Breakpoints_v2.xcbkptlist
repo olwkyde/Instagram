@@ -231,32 +231,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3AD3F4CC-6E9E-45BC-BD80-B10F1E4AC502"
+            uuid = "41A1B6C3-46DC-4999-B652-BFC89454A914"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagram/PhotoMapViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-imageButtonPressed:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-shareButtonPressed:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5D16C75C-BA76-45BA-8391-18F829C8F727"
+            uuid = "17C55102-4396-48F6-B531-A5CC85554B60"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagram/PhotoMapViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-imageButtonPressed:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-shareButtonPressed:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "17C55102-4396-48F6-B531-A5CC85554B60 - 6f296238ab6c0a23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PhotoMapViewController shareButtonPressed:]"
+                  moduleName = "Instagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ioluwakuyide/Documents/Instagram/Instagram/PhotoMapViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  uuid = "17C55102-4396-48F6-B531-A5CC85554B60 - f09ee620c2a38369"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[PhotoMapViewController shareButtonPressed:]_block_invoke_2"
+                  moduleName = "Instagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ioluwakuyide/Documents/Instagram/Instagram/PhotoMapViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEC4328D-515A-439A-A885-77191C30A531"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instagram/PhotoMapViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-shareButtonPressed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43F59A62-41E5-4C93-AF42-FECF5861F551"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instagram/PhotoMapViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -25,27 +25,9 @@
     self.captionTextView.textColor = UIColor.lightGrayColor;
     
     self.captionTextView.delegate = self;
-    
-    [self captionDidBeginEditing];
-    [self captionDidFinishEditing];
 
 }
 
-//check if caption is being edited
-- (void) captionDidBeginEditing    {
-    if (self.captionTextView.textColor == UIColor.lightGrayColor)   {
-        self.captionTextView.text = nil;
-        self.captionTextView.textColor = UIColor.blackColor;
-    }
-}
-
-//check if caption is done being edited
-- (void) captionDidFinishEditing    {
-    if ([self.captionTextView.text isEqualToString:@"" ])   {
-        self.captionTextView.text = @"Write Caption Here";
-        self.captionTextView.textColor = UIColor.lightGrayColor;
-    }
-}
 
 
 
@@ -71,6 +53,9 @@
 }
 - (IBAction)shareButtonPressed:(id)sender {
     if (![self.selectPhotoButton.titleLabel.text  isEqual: @""])  {
+//    if ([self.selectPhotoButton.imageView.image isEqual:[UIImage imageNamed:@"image_placeholder"]]){
+        //image_placeholder
+        //create a UIAlertController
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"  message:@"You did not select an image" preferredStyle:(UIAlertControllerStyleAlert)];
         
         // create an OK action
@@ -84,6 +69,32 @@
         [self presentViewController:alert animated:YES completion:^{
             // optional code for what happens after the alert controller has finished presenting
         }];
+    }
+    if (([self.selectPhotoButton.titleLabel.text  isEqual: @""] &&
+         ([self.captionTextView.text isEqualToString:@""])) || [self.captionTextView.text isEqualToString:@"Write Caption Here"] )   {
+        //create a UIAlertController
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning"  message:@"Do you want to post without a caption?" preferredStyle:(UIAlertControllerStyleAlert)];
+        
+        
+        // create a CANCEL action
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            }];
+        //add the CANCEL action to the alert
+        [alert addAction:cancelAction];
+        
+        // create a YES action
+        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //dismiss the control if YES is selected
+            [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+        //add the YES action to the alert
+        [alert addAction:yesAction];
+        
+        // present the alert controller
+        [self presentViewController:alert animated:YES completion:^{
+            // optional code for what happens after the alert controller has finished presenting
+        }];
+        
     }
 }
 
@@ -104,11 +115,12 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Do something with the images (based on your use case)
-    [self.selectPhotoButton setTitle:@"" forState:UIControlStateNormal];
     [self.selectPhotoButton setImage:editedImage forState:UIControlStateNormal];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.selectPhotoButton setTitle:@"" forState:UIControlStateNormal];
+    self.selectPhotoButton.titleLabel.text = @"";
 }
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
