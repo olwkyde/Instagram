@@ -231,80 +231,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "41A1B6C3-46DC-4999-B652-BFC89454A914"
+            uuid = "3AD3F4CC-6E9E-45BC-BD80-B10F1E4AC502"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagram/PhotoMapViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-shareButtonPressed:"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-imageButtonPressed:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "17C55102-4396-48F6-B531-A5CC85554B60"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Instagram/PhotoMapViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-shareButtonPressed:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "17C55102-4396-48F6-B531-A5CC85554B60 - 6f296238ab6c0853"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PhotoMapViewController shareButtonPressed:]"
-                  moduleName = "Instagram"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ioluwakuyide/Documents/Instagram/Instagram/PhotoMapViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "320">
-               </Location>
-               <Location
-                  uuid = "17C55102-4396-48F6-B531-A5CC85554B60 - f09ee620c2a38199"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[PhotoMapViewController shareButtonPressed:]_block_invoke_2"
-                  moduleName = "Instagram"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ioluwakuyide/Documents/Instagram/Instagram/PhotoMapViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D7672599-332D-4B0F-BA26-CC36CB37785B"
+            uuid = "5D16C75C-BA76-45BA-8391-18F829C8F727"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagram/PhotoMapViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-captionDidBeginEditing"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-imageButtonPressed:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

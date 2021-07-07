@@ -28,8 +28,9 @@
     
     [self captionDidBeginEditing];
     [self captionDidFinishEditing];
-    
+
 }
+
 //check if caption is being edited
 - (void) captionDidBeginEditing    {
     if (self.captionTextView.textColor == UIColor.lightGrayColor)   {
@@ -109,5 +110,19 @@
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    if (self.captionTextView.textColor == UIColor.lightGrayColor)   {
+        self.captionTextView.text = nil;
+        self.captionTextView.textColor = UIColor.blackColor;
+    }
+}
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    if ([self.captionTextView.text isEqualToString:@"" ])   {
+        self.captionTextView.text = @"Write Caption Here";
+        self.captionTextView.textColor = UIColor.lightGrayColor;
+    }
+}
+
 
 @end
