@@ -57,15 +57,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-
+    
     // Do something with the images (based on your use case)
     
-    
     // Dismiss UIImagePickerController to go back to your original view controller
+    [self.selectPhotoButton setImage:editedImage forState:UIControlStateNormal];
     [self dismissViewControllerAnimated:YES completion:nil];
-    self.selectPhotoButton.imageView.image = originalImage;
 }
 
 @end
