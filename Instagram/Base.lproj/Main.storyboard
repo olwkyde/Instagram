@@ -87,17 +87,17 @@
             </objects>
             <point key="canvasLocation" x="20" y="93.838862559241704"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Home Feed-->
         <scene sceneID="x5j-f4-vZR">
             <objects>
-                <viewController storyboardIdentifier="FeedViewController" id="TNn-8R-oF0" customClass="FeedViewController" sceneMemberID="viewController">
+                <viewController id="TNn-8R-oF0" customClass="FeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yan-fw-ur3">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="j31-pw-cSx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kqE-5D-X3O">
+                    <navigationItem key="navigationItem" title="Home Feed" id="kqE-5D-X3O">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="xHT-Ok-gKg">
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="TNn-8R-oF0" id="ST6-jC-ust"/>
@@ -115,7 +115,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1FZ-oP-jDe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xBS-jL-Ky8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xBS-jL-Ky8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="33d-hL-uO0">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>

@@ -104,7 +104,7 @@
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Invalid Sign Up"  message:@"Some error in registration" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Invalid Sign Up"  message:@"Wrong username or password" preferredStyle:(UIAlertControllerStyleAlert)];
     
     // create an OK action
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
