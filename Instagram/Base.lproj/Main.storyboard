@@ -139,12 +139,26 @@
                                     <action selector="imageButtonPressed:" destination="XD4-Df-GwW" eventType="touchUpInside" id="SIS-5l-Snb"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24b-SM-Rbn">
+                                <rect key="frame" x="40" y="447" width="310" height="132"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="WKx-Iy-Hb1"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L8Z-F1-h7O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="24b-SM-Rbn" firstAttribute="leading" secondItem="L8Z-F1-h7O" secondAttribute="leading" constant="40" id="6PR-78-crG"/>
                             <constraint firstItem="b5b-ia-nkG" firstAttribute="leading" secondItem="L8Z-F1-h7O" secondAttribute="leading" constant="41" id="Cko-tz-gOI"/>
+                            <constraint firstItem="L8Z-F1-h7O" firstAttribute="trailing" secondItem="24b-SM-Rbn" secondAttribute="trailing" constant="40" id="I1B-17-0ue"/>
                             <constraint firstItem="b5b-ia-nkG" firstAttribute="top" secondItem="L8Z-F1-h7O" secondAttribute="top" constant="64" id="Qc4-Rv-ouG"/>
+                            <constraint firstItem="24b-SM-Rbn" firstAttribute="top" secondItem="b5b-ia-nkG" secondAttribute="bottom" constant="27" id="XJq-Bc-Qi6"/>
+                            <constraint firstItem="L8Z-F1-h7O" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="24b-SM-Rbn" secondAttribute="bottom" constant="20" id="ozU-xY-yIM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="etb-QF-K6x">
@@ -153,9 +167,14 @@
                                 <action selector="cancelButtonPressed:" destination="XD4-Df-GwW" id="eE2-yA-6bZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="JgC-aX-dul"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="JgC-aX-dul">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="XD4-Df-GwW" id="eTQ-aW-gLi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionTextView" destination="24b-SM-Rbn" id="Bfw-D1-hUh"/>
                         <outlet property="selectPhotoButton" destination="b5b-ia-nkG" id="XJm-2b-uhT"/>
                     </connections>
                 </viewController>
@@ -205,6 +224,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

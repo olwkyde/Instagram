@@ -10,6 +10,7 @@
 
 @interface PhotoMapViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *selectPhotoButton;
+@property (weak, nonatomic) IBOutlet UITextView *captionTextView;
 
 @end
 
@@ -17,11 +18,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-    imagePickerVC.delegate = self;
-    imagePickerVC.allowsEditing = YES;
     // Do any additional setup after loading the view.
+    
+    //set default text and text color
+    self.captionTextView.text = @"Write Caption Here";
+    self.captionTextView.textColor = UIColor.lightGrayColor;
+    
+    self.captionTextView.delegate = self;
+    
+    [self captionDidBeginEditing];
+    [self captionDidFinishEditing];
+    
 }
+//check if caption is being edited
+- (void) captionDidBeginEditing    {
+    if (self.captionTextView.textColor == UIColor.lightGrayColor)   {
+        self.captionTextView.text = nil;
+        self.captionTextView.textColor = UIColor.blackColor;
+    }
+}
+
+//check if caption is done being edited
+- (void) captionDidFinishEditing    {
+    if ([self.captionTextView.text isEqualToString:@"" ])   {
+        self.captionTextView.text = @"Write Caption Here";
+        self.captionTextView.textColor = UIColor.lightGrayColor;
+    }
+}
+
+
+
 - (IBAction)imageButtonPressed:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -42,6 +68,23 @@
     FeedViewController *feedViewController = [[UIViewController alloc] initWithNibName:@"FeedViewController" bundle:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)shareButtonPressed:(id)sender {
+    if (![self.selectPhotoButton.titleLabel.text  isEqual: @""])  {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"  message:@"You did not select an image" preferredStyle:(UIAlertControllerStyleAlert)];
+        
+        // create an OK action
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // handle response here.
+            }];
+        //add the OK
+        [alert addAction:okAction];
+        
+        //present the alert controller
+        [self presentViewController:alert animated:YES completion:^{
+            // optional code for what happens after the alert controller has finished presenting
+        }];
+    }
+}
 
 /*
 #pragma mark - Navigation
@@ -60,9 +103,10 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Do something with the images (based on your use case)
+    [self.selectPhotoButton setTitle:@"" forState:UIControlStateNormal];
+    [self.selectPhotoButton setImage:editedImage forState:UIControlStateNormal];
     
     // Dismiss UIImagePickerController to go back to your original view controller
-    [self.selectPhotoButton setImage:editedImage forState:UIControlStateNormal];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
