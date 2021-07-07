@@ -6,6 +6,7 @@
 //
 
 #import "PhotoMapViewController.h"
+#import "FeedViewController.h"
 
 @interface PhotoMapViewController ()
 
@@ -16,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)imageButtonPressed:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
@@ -30,6 +33,11 @@
     }
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
+
+}
+- (IBAction)cancelButtonPressed:(id)sender {
+    FeedViewController *feedViewController = [[UIViewController alloc] initWithNibName:@"FeedViewController" bundle:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
@@ -41,5 +49,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+
+    // Do something with the images (based on your use case)
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

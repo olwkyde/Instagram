@@ -103,6 +103,11 @@
                                 <action selector="logoutButtonPressed:" destination="TNn-8R-oF0" id="ST6-jC-ust"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="HCL-Na-6CY">
+                            <connections>
+                                <segue destination="3UH-nE-uqa" kind="presentation" id="AUe-2b-Nhc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="logoutButton" destination="xHT-Ok-gKg" id="lVh-Us-7lj"/>
@@ -111,6 +116,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o27-CQ-TqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1890.7692307692307" y="93.838862559241704"/>
+        </scene>
+        <!--Photo Map View Controller-->
+        <scene sceneID="BwF-I2-GNH">
+            <objects>
+                <viewController id="XD4-Df-GwW" customClass="PhotoMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zyf-lI-gdE">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3rH-hs-7zT">
+                                <rect key="frame" x="171" y="71" width="203" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="K9h-Yl-Gii"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5b-ia-nkG">
+                                <rect key="frame" x="16" y="71" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="8jj-JN-hMm"/>
+                                    <constraint firstAttribute="width" constant="150" id="i1h-99-onP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="imageButtonPressed:" destination="XD4-Df-GwW" eventType="touchUpInside" id="SIS-5l-Snb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L8Z-F1-h7O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b5b-ia-nkG" firstAttribute="leading" secondItem="L8Z-F1-h7O" secondAttribute="leading" constant="16" id="Cko-tz-gOI"/>
+                            <constraint firstItem="b5b-ia-nkG" firstAttribute="top" secondItem="L8Z-F1-h7O" secondAttribute="top" constant="15" id="Qc4-Rv-ouG"/>
+                            <constraint firstItem="3rH-hs-7zT" firstAttribute="top" secondItem="L8Z-F1-h7O" secondAttribute="top" constant="15" id="got-8b-WSQ"/>
+                            <constraint firstItem="3rH-hs-7zT" firstAttribute="leading" secondItem="b5b-ia-nkG" secondAttribute="trailing" constant="5" id="mPW-7K-9SR"/>
+                            <constraint firstItem="L8Z-F1-h7O" firstAttribute="trailing" secondItem="3rH-hs-7zT" secondAttribute="trailing" constant="16" id="wWq-8l-2TS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="etb-QF-K6x">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2ep-KP-gFK">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="XD4-Df-GwW" id="eE2-yA-6bZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="JgC-aX-dul"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXV-Um-jxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3875.3846153846152" y="93.838862559241704"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1FZ-oP-jDe">
@@ -130,8 +188,30 @@
             </objects>
             <point key="canvasLocation" x="961.53846153846155" y="93.838862559241704"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xHg-C1-7Vh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3UH-nE-uqa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zFz-nC-2ay">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XD4-Df-GwW" kind="relationship" relationship="rootViewController" id="4bl-dV-vUg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Hf-IV-tGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2944.6153846153843" y="93.838862559241704"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
