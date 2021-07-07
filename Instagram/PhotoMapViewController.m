@@ -9,6 +9,7 @@
 #import "FeedViewController.h"
 
 @interface PhotoMapViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *selectPhotoButton;
 
 @end
 
@@ -16,13 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
     // Do any additional setup after loading the view.
 }
 - (IBAction)imageButtonPressed:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-
     // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -59,8 +62,10 @@
 
     // Do something with the images (based on your use case)
     
+    
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
+    self.selectPhotoButton.imageView.image = originalImage;
 }
 
 @end
