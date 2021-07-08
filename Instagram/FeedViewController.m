@@ -31,17 +31,14 @@
     self.tableView.dataSource = self;
     
     [self fetchMessages];
-//    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
 }
 
--(void) onTimer{
-    [self fetchMessages];
-}
 
 -(void) fetchMessages   {
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey:@"author"];
+    [query includeKey:@"createdAt"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
 
@@ -64,20 +61,21 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-//    if([[segue identifier] isEqualToString:@"DetailSegue"]) {
-//        //assign the tappedCell to a new PostCell
-//        PostCell *tappedCell = sender;
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-//        
-//        Post *post = self.posts[indexPath.row];
-//        DetailViewController *detailViewController = [segue destinationViewController];
-//        detailViewController.post = post;
-//    }   else{
-//        UINavigationController *navigationController = [segue destinationViewController];
-//        
-//        PhotoMapViewController *photoMapViewController = (PhotoMapViewController*)navigationController.topViewController;
-//        [self dismissViewControllerAnimated:TRUE completion:nil];
-//    }
+    if([[segue identifier] isEqualToString:@"DetailSegue"]) {
+        //assign the tappedCell to a new PostCell
+        PostCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        
+        Post *post = self.posts[indexPath.row];
+        
+        DetailViewController *detailViewController = [segue destinationViewController];
+        detailViewController.post = post;
+    }   else{
+        UINavigationController *navigationController = [segue destinationViewController];
+        
+        PhotoMapViewController *photoMapViewController = (PhotoMapViewController*)navigationController.topViewController;
+        [self dismissViewControllerAnimated:TRUE completion:nil];
+    }
 }
 
 - (IBAction)logoutButtonPressed:(id)sender {

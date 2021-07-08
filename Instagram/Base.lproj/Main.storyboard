@@ -193,7 +193,7 @@
                                             <outlet property="postImageView" destination="SMs-n0-qaJ" id="Nff-Hy-Ze8"/>
                                             <outlet property="profileImageView" destination="Ble-Bh-q7S" id="ehr-Zw-G8J"/>
                                             <outlet property="usernameLabel" destination="B2k-dE-SZi" id="vyf-3P-DRa"/>
-                                            <segue destination="3n6-si-DfZ" kind="show" identifier="DetailSegue" id="mmW-f4-TjD"/>
+                                            <segue destination="VQO-vr-8A4" kind="show" identifier="DetailSegue" id="eQd-mP-4eq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -250,7 +250,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s8G-Sq-tOx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s8G-Sq-tOx">
                                 <rect key="frame" x="0.0" y="191" width="390" height="390"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="s8G-Sq-tOx" secondAttribute="height" multiplier="1:1" id="vlY-MT-Qks"/>
@@ -325,7 +325,9 @@
                             <constraint firstItem="ntU-6G-2uW" firstAttribute="top" secondItem="0RC-fa-DNV" secondAttribute="top" constant="90" id="yzF-Df-CHF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Post Details" id="vzf-4o-nXL"/>
+                    <navigationItem key="navigationItem" title="Post Details" id="vzf-4o-nXL">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Home Feed" id="TJb-FG-5ok"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="captionLabel" destination="P3Z-sB-CcW" id="zxY-YB-OKQ"/>
                         <outlet property="commentButton" destination="gxo-rP-xsp" id="B8H-yc-sJH"/>
@@ -340,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N4T-kj-4Sf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2943" y="830"/>
+            <point key="canvasLocation" x="1891" y="834"/>
         </scene>
         <!--Photo Map View Controller-->
         <scene sceneID="BwF-I2-GNH">
@@ -441,25 +443,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hf-IV-tGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2944.6153846153843" y="93.838862559241704"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rw7-7j-VsN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3n6-si-DfZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="vyS-e5-xpQ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gKv-ph-KbL">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="VQO-vr-8A4" kind="relationship" relationship="rootViewController" id="npo-bf-WdV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QqG-3C-f2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1891" y="830"/>
         </scene>
     </scenes>
     <resources>

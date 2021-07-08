@@ -22,9 +22,11 @@
     self.commentCountLabel.text = [[NSString stringWithFormat:@"%@",self.post.commentCount] stringByAppendingString:@" likes"];
     self.likeCountLabel.text = [[NSString stringWithFormat:@"%@",self.post.likeCount] stringByAppendingString:@" likes"];
     self.postImageView.image = [UIImage imageWithData:[self.post.image getData]];
-    
+    self.usernameLabel.text = self.post.author.username;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"M-dd-yy h:mm a";
+    self.timeLabel.text = [dateFormatter stringFromDate:self.post.createdAt];
 }
-
 /*
 #pragma mark - Navigation
 
