@@ -78,7 +78,7 @@
         DetailViewController *detailViewController = [segue destinationViewController];
         detailViewController.post = post;
     }   else{
-        [self dismissViewControllerAnimated:TRUE completion:nil];
+//        [self dismissViewControllerAnimated:TRUE completion:nil];
     }
 }
 
