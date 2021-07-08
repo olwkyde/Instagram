@@ -29,7 +29,7 @@
     self.tableView.dataSource = self;
     
     [self fetchMessages];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
+//    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
 }
 
 -(void) onTimer{
@@ -39,6 +39,7 @@
 -(void) fetchMessages   {
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey:@"author"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
 
@@ -82,7 +83,7 @@
     cell.captionLabel.text = post.caption;
     cell.postImageView.image = [UIImage imageWithData:[post.image getData]];
     
-    PFUser *user = self.posts[indexPath.row][@"user"];
+    PFUser *user = self.posts[indexPath.row][@"author"];
     if (user != nil)    {
         cell.usernameLabel.text = user.username;
     }
