@@ -78,9 +78,6 @@
         DetailViewController *detailViewController = [segue destinationViewController];
         detailViewController.post = post;
     }   else{
-        UINavigationController *navigationController = [segue destinationViewController];
-        
-        PhotoMapViewController *photoMapViewController = (PhotoMapViewController*)navigationController.topViewController;
         [self dismissViewControllerAnimated:TRUE completion:nil];
     }
 }
