@@ -7,6 +7,7 @@
 
 #import "PhotoMapViewController.h"
 #import "FeedViewController.h"
+#import "Post.h"
 
 @interface PhotoMapViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *selectPhotoButton;
@@ -53,8 +54,6 @@
 }
 - (IBAction)shareButtonPressed:(id)sender {
     if (![self.selectPhotoButton.titleLabel.text  isEqual: @""])  {
-//    if ([self.selectPhotoButton.imageView.image isEqual:[UIImage imageNamed:@"image_placeholder"]]){
-        //image_placeholder
         //create a UIAlertController
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"  message:@"You did not select an image" preferredStyle:(UIAlertControllerStyleAlert)];
         
@@ -69,8 +68,7 @@
         [self presentViewController:alert animated:YES completion:^{
             // optional code for what happens after the alert controller has finished presenting
         }];
-    }
-    if (([self.selectPhotoButton.titleLabel.text  isEqual: @""] &&
+    } else if (([self.selectPhotoButton.titleLabel.text  isEqual: @""] &&
          ([self.captionTextView.text isEqualToString:@""])) || [self.captionTextView.text isEqualToString:@"Write Caption Here"] )   {
         //create a UIAlertController
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning"  message:@"Do you want to post without a caption?" preferredStyle:(UIAlertControllerStyleAlert)];
@@ -84,7 +82,21 @@
         
         // create a YES action
         UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            //dismiss the control if YES is selected
+            //dismiss the control if YES is selected and set the text to empty string
+            self.captionTextView.text = @"";
+
+            
+            //create instance of Post
+            Post *post = [[Post alloc] init];
+            
+            UIImage *image = self.selectPhotoButton.imageView.image;
+            
+            //resize post
+            UIImage *finalPost = [post resizeImage:image withSize:CGSizeMake(image.size.width, image.size.height)];
+            
+            //post it to Parse database
+            [Post postUserImage:finalPost withCaption:self.captionTextView.text withCompletion:nil];
+            //dismissViewController
             [self dismissViewControllerAnimated:YES completion:nil];
             }];
         //add the YES action to the alert
@@ -96,6 +108,23 @@
         }];
         
     }
+    else    {
+        //create instance of Post
+        Post *post = [[Post alloc] init];
+        
+        UIImage *image = self.selectPhotoButton.imageView.image;
+        
+        //resize post
+        UIImage *finalPost = [post resizeImage:image withSize:CGSizeMake(image.size.width, image.size.height)];
+        
+        //post it to Parse database
+        [Post postUserImage:finalPost withCaption:self.captionTextView.text withCompletion:nil];
+        
+        //dismiss the controller
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+    
 }
 
 /*

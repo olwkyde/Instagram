@@ -22,6 +22,8 @@
 		BB08C1822694EF5700943034 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB08C1812694EF5700943034 /* LoginViewController.m */; };
 		BB08C1852694FB5400943034 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB08C1842694FB5400943034 /* FeedViewController.m */; };
 		BB08C1882695184D00943034 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB08C1872695184D00943034 /* PhotoMapViewController.m */; };
+		BB0C2C0A2696677E00C8DDEA /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0C2C092696677E00C8DDEA /* Post.m */; };
+		BB0C2C0E2696707600C8DDEA /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0C2C0D2696707600C8DDEA /* PostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		BB08C1842694FB5400943034 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		BB08C1862695184D00943034 /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
 		BB08C1872695184D00943034 /* PhotoMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
+		BB0C2C082696677E00C8DDEA /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		BB0C2C092696677E00C8DDEA /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		BB0C2C0C2696707600C8DDEA /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		BB0C2C0D2696707600C8DDEA /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		C5797E31F9B225CA119F24AA /* Pods_InstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A29DED5BE2518B31646935 /* Pods-Instagram-InstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-InstagramUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-InstagramUITests/Pods-Instagram-InstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +159,8 @@
 		BB08C1492694E82400943034 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				BB0C2C0B2696703A00C8DDEA /* Views */,
+				BB0C2C072696675C00C8DDEA /* Models */,
 				BB08C17F2694EF1C00943034 /* ViewControllers */,
 				BB08C14A2694E82400943034 /* AppDelegate.h */,
 				BB08C14B2694E82400943034 /* AppDelegate.m */,
@@ -198,6 +206,24 @@
 				BB08C1872695184D00943034 /* PhotoMapViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BB0C2C072696675C00C8DDEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB0C2C082696677E00C8DDEA /* Post.h */,
+				BB0C2C092696677E00C8DDEA /* Post.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BB0C2C0B2696703A00C8DDEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB0C2C0C2696707600C8DDEA /* PostCell.h */,
+				BB0C2C0D2696707600C8DDEA /* PostCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,8 +468,10 @@
 				BB08C15D2694E82500943034 /* main.m in Sources */,
 				BB08C14F2694E82400943034 /* SceneDelegate.m in Sources */,
 				BB08C1882695184D00943034 /* PhotoMapViewController.m in Sources */,
+				BB0C2C0E2696707600C8DDEA /* PostCell.m in Sources */,
 				BB08C1852694FB5400943034 /* FeedViewController.m in Sources */,
 				BB08C1822694EF5700943034 /* LoginViewController.m in Sources */,
+				BB0C2C0A2696677E00C8DDEA /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
