@@ -24,6 +24,7 @@
 		BB08C1882695184D00943034 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB08C1872695184D00943034 /* PhotoMapViewController.m */; };
 		BB0C2C0A2696677E00C8DDEA /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0C2C092696677E00C8DDEA /* Post.m */; };
 		BB0C2C0E2696707600C8DDEA /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0C2C0D2696707600C8DDEA /* PostCell.m */; };
+		BBD72A5C2697962C00AFE666 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD72A5B2697962C00AFE666 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		BB0C2C092696677E00C8DDEA /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		BB0C2C0C2696707600C8DDEA /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		BB0C2C0D2696707600C8DDEA /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		BBD72A5A2697962C00AFE666 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BBD72A5B2697962C00AFE666 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C5797E31F9B225CA119F24AA /* Pods_InstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A29DED5BE2518B31646935 /* Pods-Instagram-InstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-InstagramUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-InstagramUITests/Pods-Instagram-InstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				BB08C1502694E82400943034 /* ViewController.h */,
+				BBD72A5A2697962C00AFE666 /* DetailViewController.h */,
+				BBD72A5B2697962C00AFE666 /* DetailViewController.m */,
 				BB08C1512694E82400943034 /* ViewController.m */,
 				BB08C1802694EF5700943034 /* LoginViewController.h */,
 				BB08C1812694EF5700943034 /* LoginViewController.m */,
@@ -468,6 +473,7 @@
 				BB08C15D2694E82500943034 /* main.m in Sources */,
 				BB08C14F2694E82400943034 /* SceneDelegate.m in Sources */,
 				BB08C1882695184D00943034 /* PhotoMapViewController.m in Sources */,
+				BBD72A5C2697962C00AFE666 /* DetailViewController.m in Sources */,
 				BB0C2C0E2696707600C8DDEA /* PostCell.m in Sources */,
 				BB08C1852694FB5400943034 /* FeedViewController.m in Sources */,
 				BB08C1822694EF5700943034 /* LoginViewController.m in Sources */,
