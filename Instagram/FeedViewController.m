@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @property (nonatomic, strong) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -29,6 +30,11 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchMessages) forControlEvents:UIControlEventValueChanged];
+    self.tableView.refreshControl = self.refreshControl;
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     [self fetchMessages];
 }
@@ -51,6 +57,7 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+    [self.refreshControl endRefreshing];
 }
 
 
