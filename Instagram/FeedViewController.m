@@ -14,10 +14,11 @@
 #import <Parse/Parse.h>
 #import "DetailViewController.h"
 #import "PhotoMapViewController.h"
+#import "UIImageView+AFNetworking.h"
 
-@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource, PhotoMapViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
-@property (nonatomic, strong) NSArray *posts;
+@property (nonatomic, strong) NSMutableArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
@@ -36,6 +37,13 @@
     self.tableView.refreshControl = self.refreshControl;
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
+    
+    [self fetchMessages];
+//    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
+}
+
+- (void)onTimer {
+   // Add code to be run periodically
     [self fetchMessages];
 }
 
@@ -51,7 +59,7 @@
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
-            self.posts = posts;
+            self.posts = [posts copy];
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -103,12 +111,18 @@
     
     //set the cell attributes
     cell.captionLabel.text = post.caption;
-    cell.postImageView.image = [UIImage imageWithData:[post.image getData]];
+    PFFileObject *postImage = post.image;
+    NSURL *imageURL = [NSURL URLWithString:postImage.url];
+//    cell.postImageView.image = [UIImage imageWithData:[post.image getData]];
+    [cell.postImageView setImageWithURL:imageURL];
     
-    PFUser *user = self.posts[indexPath.row][@"author"];
-    if (user != nil)    {
-        cell.usernameLabel.text = user.username;
-    }
+    PFUser *user = post[@"author"];
+//    NSLog(@"%@", user.username);
+    [user fetchIfNeededInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (user != nil)    {
+            cell.usernameLabel.text = user[@"username"];
+        }
+    }];
     
     int LC = [post.likeCount intValue];
     cell.likeCountLabel.text = [[NSString stringWithFormat:@"%d",LC] stringByAppendingString:@" likes"];
@@ -121,6 +135,12 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.posts.count;
+}
+
+
+- (void)didPost:(Post *)post {
+    [self.posts insertObject:post atIndex:0];
+    [self.tableView reloadData];
 }
 
 

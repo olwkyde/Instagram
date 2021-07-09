@@ -98,6 +98,7 @@
             UIImage *finalPost = [post resizeImage:image withSize:CGSizeMake(image.size.width, image.size.height)];
             
             //post it to Parse database
+            [self.delegate didPost:post];
             [Post postUserImage:finalPost withCaption:self.captionTextView.text withCompletion:nil];
             //dismissViewController
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -123,6 +124,7 @@
         //post it to Parse database
         [Post postUserImage:finalPost withCaption:self.captionTextView.text withCompletion:nil];
         
+        [self.delegate didPost:post];
         //dismiss the controller
         [self dismissViewControllerAnimated:YES completion:nil];
     }
